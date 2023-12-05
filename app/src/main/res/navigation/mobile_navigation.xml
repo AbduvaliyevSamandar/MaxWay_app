@@ -12,14 +12,65 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.maxwayapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_cart"
+        android:name="com.example.maxwayapp.ui.cart.CartFragment"
+        android:label="@string/title_cart"
+        tools:layout="@layout/fragment_cart" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.maxwayapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_orders"
+        android:name="com.example.maxwayapp.ui.orders.OrdersFragment"
+        android:label="@string/title_orders"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.maxwayapp.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_profileEditFragment"
+            app:destination="@id/profileEditFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_filliallarFragment"
+            app:destination="@id/filliallarFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_sozlamalarFragment"
+            app:destination="@id/sozlamalarFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_xizmatlarHaqidaFragment"
+            app:destination="@id/xizmatlarHaqidaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="com.example.maxwayapp.ui.profile.profile_edit.ProfileEditFragment"
+        android:label="Profilni tahrirlash" />
+    <fragment
+        android:id="@+id/filliallarFragment"
+        android:name="com.example.maxwayapp.ui.profile.Filliallar.FilliallarFragment"
+        android:label="Filliallar" >
+        <action
+            android:id="@+id/action_filliallarFragment_to_fillialFragment"
+            app:destination="@id/fillialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fillialFragment"
+        android:name="com.example.maxwayapp.ui.profile.Fillial.FillialFragment"
+        android:label="Fillial" />
+    <fragment
+        android:id="@+id/sozlamalarFragment"
+        android:name="com.example.maxwayapp.ui.profile.Sozlamalar.SozlamalarFragment"
+        android:label="Sozlamalar" />
+    <fragment
+        android:id="@+id/xizmatlarHaqidaFragment"
+        android:name="com.example.maxwayapp.ui.profile.xizmatlar.XizmatlarHaqidaFragment"
+        android:label="Xizmatlar haqida" >
+        <action
+            android:id="@+id/action_xizmatlarHaqidaFragment_to_bizHaqimizdaFragment"
+            app:destination="@id/bizHaqimizdaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bizHaqimizdaFragment"
+        android:name="com.example.maxwayapp.ui.profile.xizmatlar.bizhaqimizda.BizHaqimizdaFragment"
+        android:label="Biz haqimizda"
+        />
 </navigation>

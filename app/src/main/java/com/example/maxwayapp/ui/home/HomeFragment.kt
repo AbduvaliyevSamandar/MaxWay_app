@@ -1,42 +1,46 @@
 package com.example.maxwayapp.ui.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.viewpager2.widget.ViewPager2
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.maxwayapp.R
+import com.example.maxwayapp.adapter.PagerAdapter
 import com.example.maxwayapp.databinding.FragmentHomeBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private var _binding: FragmentHomeBinding? = null
+    private  val ARG_OBJECT = "object"
+    private val binding:FragmentHomeBinding by viewBinding()
+    private var data=ArrayList<String>()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        data= ArrayList()
+        for (i in 0..10){
+            data.add("Maxi Boxddddd")
         }
-        return root
+
+        binding.pager.adapter= PagerAdapter(this,data)
+        binding.pager.offscreenPageLimit=5
+
+       binding.pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+            }
+        })
+        TabLayoutMediator(binding.tab, binding.pager) { tab, position ->
+            tab.text=position.toString()
+        }.attach()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+
 }
+
+
