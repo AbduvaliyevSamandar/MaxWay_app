@@ -1,22 +1,323 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.orders.OrdersFragment">
+    android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/text_notifications"
+    tools:context=".ui.orders.OrdersFragment">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#C6C6C6"
+        >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:weightSum="2.7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.02">
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="normal"
+            android:layout_marginStart="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_weight="0.7"
+            android:text="@string/delivery"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="30dp"
+
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/on_your" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp"
+                android:text="@string/on_your_own"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:button="@drawable/checkbox"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="end" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="start"
+                android:src="@drawable/delivery" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp"
+                android:textStyle="normal"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/order_delivery"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:button="@drawable/checkbox"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="end" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="visible"
+        android:layout_marginTop="10dp"
+        android:weightSum="5"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/white"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="start"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/address" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp"
+                android:textStyle="normal"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Выберите филлиал"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:weightSum="3"
+        android:background="@color/white"
+        android:orientation="vertical"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="start"
+                android:layout_marginVertical="20dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/address" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="70dp"
+                android:textStyle="normal"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Аддресс доставки"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:text="Выберите время доставки"
+            />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+            <CalendarView
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:text="Выберите дату"
+                android:fontFamily="sans-serif-condensed-medium"
+                app:iconSize="24dp"
+                android:drawableEnd="@drawable/baseline_keyboard_arrow_down_24"
+                />
+            <TimePicker
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:text="16:30"
+                />
+        </FrameLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@color/white"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="normal"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Тип оплаты"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="start"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/cash" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="70dp"
+                    android:textStyle="normal"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Наличные"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="start"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/payme" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="70dp"
+                    android:textStyle="normal"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="PayMe"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="start"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/click" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="70dp"
+                    android:textStyle="normal"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Click"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+        
+    </LinearLayout>
+</ScrollView>
