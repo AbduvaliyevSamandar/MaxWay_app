@@ -15,16 +15,20 @@ import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.maxwayapp.databinding.BottonsheetlayoutBinding
 import com.example.maxwayapp.databinding.FragmentSozlamalarBinding
+import com.example.maxwayapp.extention.requarebuttonNav
 import com.github.angads25.toggle.interfaces.OnToggledListener
 import com.github.angads25.toggle.model.ToggleableView
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class SozlamalarFragment :Fragment(com.example.maxwayapp.R.layout.fragment_sozlamalar) {
 
     private val binding:FragmentSozlamalarBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requarebuttonNav(this)
 
         binding.labeledSwitch.setOnToggledListener(object : OnToggledListener {
 

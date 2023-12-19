@@ -7,13 +7,16 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.maxwayapp.R
 import com.example.maxwayapp.databinding.FragmentProfileBinding
+import com.example.maxwayapp.extention.requarebuttonNavVisibl
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment :Fragment(R.layout.fragment_profile) {
 
     private val binding:FragmentProfileBinding by viewBinding()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        requarebuttonNavVisibl(this)
         binding.imageView.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_profile_to_profileEditFragment)
         }

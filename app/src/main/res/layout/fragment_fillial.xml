@@ -124,7 +124,7 @@
 
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/minus"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -140,7 +140,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -152,7 +152,7 @@
             android:textSize="16sp"
             android:textStyle="normal"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-            app:layout_constraintEnd_toStartOf="@+id/textView18"
+            app:layout_constraintEnd_toStartOf="@+id/minus"
             app:layout_constraintStart_toEndOf="@+id/imageView15"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -191,7 +191,7 @@
 
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/plus"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -219,7 +219,7 @@
             android:textSize="16sp"
             android:textStyle="normal"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
-            app:layout_constraintEnd_toStartOf="@+id/textView20"
+            app:layout_constraintEnd_toStartOf="@+id/plus"
             app:layout_constraintStart_toEndOf="@+id/imageView17"
             app:layout_constraintTop_toTopOf="parent" />
 

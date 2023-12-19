@@ -5,15 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="80dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="56dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img_13" />
+        app:cardCornerRadius="8dp"
+        android:backgroundTint="#ebe2d1"
+        >
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="55dp" />
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/textView13"
@@ -25,11 +35,11 @@
         android:textColor="@color/black"
         android:textSize="15.3sp"
         android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintStart_toStartOf="@+id/minus"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
@@ -45,7 +55,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView13" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -56,12 +66,12 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="normal"
-        app:layout_constraintEnd_toStartOf="@+id/textView17"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintEnd_toStartOf="@+id/count"
+        app:layout_constraintStart_toEndOf="@+id/cardview"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
@@ -69,12 +79,12 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="normal"
-        app:layout_constraintEnd_toStartOf="@+id/textView24"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toTopOf="@+id/textView16" />
+        app:layout_constraintEnd_toStartOf="@+id/pluscart"
+        app:layout_constraintStart_toEndOf="@+id/minus"
+        app:layout_constraintTop_toTopOf="@+id/minus" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/pluscart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="136dp"
@@ -85,7 +95,7 @@
         android:textSize="20sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView16" />
+        app:layout_constraintTop_toTopOf="@+id/minus" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -97,5 +107,5 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"/>
+        app:layout_constraintTop_toBottomOf="@+id/minus"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
